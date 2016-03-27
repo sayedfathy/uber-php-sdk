@@ -1,8 +1,8 @@
-# uber-php-sdk
-Just a tiny PHP SDK for API developers 
+**Usage**
 
-# usage
-1. Download and Install
-2. Start Use it
+1.  Download and Installing
+2.  Authentication
 
-# Download ans Install
+**Download and Installing**
+
+Clone the code inside your server directory. require the autoload `require 'client/autoload.php'`
