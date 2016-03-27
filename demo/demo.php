@@ -6,7 +6,7 @@ $client_id = 'Kr7poSG_TFMZ-CoQpzpYefDqQseU-TYj';
 $client_secret = 'q19F35LZtBXCEE0JYGtlwhJLvrlR4b75yCkCZ-6S';
 $redirect_uri = 'http://localhost/try/uber_api/demo.php';
 
-$uber = Uber::api();
+$uber = new Uber();
 $uber->setClientId($client_id);
 $uber->setClientSecret($client_secret);
 $uber->setRedirectUri($redirect_uri);
@@ -26,6 +26,5 @@ if(isset($_SESSION['token'])) {
 	var_dump($result);
 }else {
 	$login = $uber->get_authorization_url();
-	echo $login;
-	echo "<a href=$login>Click here</a>";
+	echo "<a href=$login>Login with Uber</a>";
 }

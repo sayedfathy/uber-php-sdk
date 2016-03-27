@@ -35,49 +35,17 @@ class Uber {
 	private $access_token;
 	private $scope;
 	private static $curl;
-	/**
-	* @var Uber The reference to *Uber* instance of this class
-	*/
-	private static $instance = null;
-
+	
 	/**
 	* Returns the *Uber* instance of this class.
 	*
 	* @return Uber The *Uber* instance.
 	*/
-	public static function api() {
-		// Check if instance is already exists      
-		if(self::$instance == null) {
-		self::$instance = new Uber();
-		}
 
-		return self::$instance;
-	}
-
-	/**
-	 * Private constructor to prevent creating a new instance of the
-	 * *Singleton* via the `new` operator from outside of this class.
-	 */
-	private function __construct(){
+	public function __construct(){
 		$this->curl = new UberCurl();
 		$this->access_token = new AccessToken();
 	}
-
-	/**
-	 * Private clone method to prevent cloning of the instance of the
-	 * *Singleton* instance.
-	 *
-	 * @return void
-	 */
-	private function __clone() {}
-	
-	/**
-	 * Private unserialize method to prevent unserializing of the *Singleton*
-	 * instance.
-	 *
-	 * @return void
-	 */
-	private function __wakeup() {}
 
 	public function setClientId($client_id) {
 		$this->client_id = $client_id;
